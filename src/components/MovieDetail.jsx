@@ -7,12 +7,16 @@ export const MovieDetail = ({ movie }) => {
   const genre = movie.genres;
   const genreNames = genre.map((genre) => genre.name).join(", ");
   return (
-    <div className="flex p-[20px] gap-[10px]">
+    <div className="flex p-[20px] gap-[60px] w-[65vw] items-center">
       <img className="h-[400px]" src={posterUrl} alt={movie.id} />
       <div>
-        <h1>{movie.title}</h1>
-        <span>평점: {roundedRating}</span>
-        <h2>{genreNames}</h2>
+        <div className="flex justify-between text-[30px] font-[900] mb-[20px]">
+          {movie.title}
+          <span className="text-[15px] font-[600] flex items-end justify-center ">
+            평점: {roundedRating}
+          </span>
+        </div>
+        <h2 className="text-[] font-[900]  mb-[10px]">{genreNames}</h2>
         <p>{movie.overview}</p>
       </div>
     </div>
