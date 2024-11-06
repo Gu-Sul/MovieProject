@@ -11,7 +11,9 @@ function App() {
   const [movieDetail] = useState(movieDetailData);
   return (
     <div>
-      <h1 className="text-[60px] bg-black text-[white]">Movie List</h1>
+      <h1 className="text-[60px] bg-black text-[white] pl-[50px]">
+        Movie List
+      </h1>
       <main className="flex flex-wrap gap-[20px] justify-center">
         <Routes>
           <Route path="/" element={<Main movie={movies} />} />
