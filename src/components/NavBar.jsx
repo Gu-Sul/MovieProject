@@ -6,7 +6,7 @@ export const NavBar = () => {
       <Link to="/">
         <span className="m-[10px] ml-[40px] cursor-pointer  ">홈</span>
       </Link>
-      <Link to="log-in">
+      <Link to="login">
         <span className="m-[10px]  cursor-pointer ">로그인</span>
       </Link>
       <Link to="sign-up">

@@ -6,6 +6,7 @@ import { Detail } from "./page/Detail";
 import axios from "axios";
 import { NavBar } from "./components/NavBar";
 import { SignUp } from "./page/SignUp";
+import { Login } from "./page/Login";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -82,6 +83,7 @@ function App() {
             path="/detail/:movieId"
             element={<Detail movies={detailData} />}
           />
+          <Route path="/login" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
         </Routes>
       </main>
