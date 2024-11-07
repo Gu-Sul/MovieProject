@@ -1,10 +1,10 @@
 import MovieCard from "../components/MovieCard";
 
-const Main = ({ movie }) => {
+const Main = ({ movies }) => {
   return (
     <>
-      {movie.map((movies) => (
-        <MovieCard key={movies.id} movie={movies} />
+      {movies.map((movies) => (
+        <MovieCard key={movies.id} movies={movies} />
       ))}
     </>
   );
