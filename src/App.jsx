@@ -4,6 +4,8 @@ import Main from "./page/Main";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { Detail } from "./page/Detail";
 import axios from "axios";
+import { NavBar } from "./components/NavBar";
+import { SignUp } from "./page/SignUp";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -72,6 +74,7 @@ function App() {
           Movie List
         </h1>
       </Link>
+      <NavBar />
       <main className="flex flex-wrap gap-[20px] justify-center">
         <Routes>
           <Route path="/" element={<Main movies={movies} />} />
@@ -79,6 +82,7 @@ function App() {
             path="/detail/:movieId"
             element={<Detail movies={detailData} />}
           />
+          <Route path="/sign-up" element={<SignUp />} />
         </Routes>
       </main>
     </div>

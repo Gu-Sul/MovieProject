@@ -3,10 +3,8 @@ import { useParams } from "react-router-dom";
 export const MovieDetail = ({ movies }) => {
   const { movieId } = useParams();
   const movie = movies.find((m) => m.id.toString() === movieId);
-  console.log(movie);
   const imageBaseUrl = "https://image.tmdb.org/t/p/w500";
   const posterUrl = `${imageBaseUrl}${movie.poster_path}`;
-
   const roundedRating = movie.vote_average.toFixed(1);
   const genre = movie.genres;
   const genreNames = genre.map((genre) => genre.name).join(", ");
