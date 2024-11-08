@@ -65,22 +65,17 @@ function App() {
 
   return (
     <div>
-      <Link to="/" className="header">
-        <div className="text-[60px] bg-black text-[white] pl-[50px] cursor-pointer  ">
-          Movie List
-        </div>
-      </Link>
-      <NavBar />
-      <main className="flex justify-center items-center flex-col ">
-        <Routes>
-          <Route path="/" element={<Main movies={movies} />} />
-          <Route path="/detail/:movieId" element={<Detail />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/search/:searchValue" element={<Search />} />
-        </Routes>
-        {loading && <div className="flex-none">데이터를 불러오는 중...</div>}
-      </main>
+      <div className="header">
+        <NavBar />
+      </div>
+      <Routes>
+        <Route path="/" element={<Main movies={movies} />} />
+        <Route path="/detail/:movieId" element={<Detail />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/search/:searchValue" element={<Search />} />
+      </Routes>
+      {loading && <div className="flex-none">데이터를 불러오는 중...</div>}
     </div>
   );
 }

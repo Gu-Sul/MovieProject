@@ -48,21 +48,20 @@ export const MovieDetail = () => {
   const genreNames = genre.map((genre) => genre.name).join(", ");
 
   return (
-    <div
-      style={{ background: backDropImage }}
-      className="flex p-[20px] gap-[60px] w-[65vw] items-center  mt-[200px]"
-    >
-      <img className="h-[400px]" src={posterUrl} alt={movie.id} />
-      <div>
-        <div className="flex justify-between text-[30px] font-[900] mb-[20px]">
-          {movie.title}
-          <span className="text-[15px] font-[600] flex items-end justify-center ">
-            평점: {roundedRating}
-          </span>
+    <div className="flex justify-center items-centers min-h-screen w-full">
+      <div className=" flex justify-center items-centers px-[90px] py-[200px] w-[80%] h-[60vh]">
+        <img className="  h-[400px] p-[20px]" src={posterUrl} alt={movie.id} />
+        <div className="py-[100px]">
+          <div className="flex justify-between text-[30px] font-[900] mb-[20px]">
+            {movie.title}
+            <span className="text-[15px] font-[600] flex items-end justify-center ">
+              평점: {roundedRating}
+            </span>
+          </div>
+          <h2 className="text-[] font-[900]  mb-[10px]">{genreNames}</h2>
+          <br />
+          <p>{movie.overview}</p>
         </div>
-        <h2 className="text-[] font-[900]  mb-[10px]">{genreNames}</h2>
-        <br />
-        <p>{movie.overview}</p>
       </div>
     </div>
   );

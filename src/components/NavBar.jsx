@@ -23,20 +23,27 @@ export const NavBar = () => {
   };
 
   return (
-    <nav className="flex  bg-black text-[white] p-[10px] fixed top-[80px] w-[100%] z-[999]">
+    <div>
       <Link to="/">
-        <span className="m-[10px] ml-[40px] cursor-pointer  ">홈</span>
+        <div className="text-[60px] bg-black text-[white] pl-[50px] cursor-pointer  ">
+          Movie List
+        </div>
       </Link>
-      <Link to="login">
-        <span className="m-[10px]  cursor-pointer ">로그인</span>
-      </Link>
-      <Link to="sign-up">
-        <span className="m-[10px] cursor-pointer ">회원가입</span>
-      </Link>
-      <div className="flex ml-[auto]">
-        <input onChange={handleChange} type="text" className="text-[black]" />
-        <button onClick={() => navigate(`/search/${inputValue}`)}>🔍</button>
-      </div>
-    </nav>
+      <nav className="flex  bg-black text-[white] p-[10px] fixed top-[80px] w-[100%] z-[999]">
+        <Link to="/">
+          <span className="m-[10px] ml-[40px] cursor-pointer  ">홈</span>
+        </Link>
+        <Link to="login">
+          <span className="m-[10px]  cursor-pointer ">로그인</span>
+        </Link>
+        <Link to="sign-up">
+          <span className="m-[10px] cursor-pointer ">회원가입</span>
+        </Link>
+        <div className="flex ml-[auto]">
+          <input onChange={handleChange} type="text" className="text-[black]" />
+          <button onClick={() => navigate(`/search/${inputValue}`)}>🔍</button>
+        </div>
+      </nav>
+    </div>
   );
 };
