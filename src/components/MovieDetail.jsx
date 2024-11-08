@@ -1,8 +1,45 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-export const MovieDetail = ({ movies }) => {
+export const MovieDetail = () => {
   const { movieId } = useParams();
-  const movie = movies.find((m) => m.id.toString() === movieId);
+  const [movie, setMovie] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchMovieDetail = async () => {
+      try {
+        setLoading(true);
+
+        const response = await axios.get(
+          `https://api.themoviedb.org/3/movie/${movieId}`,
+          {
+            params: {
+              api_key: import.meta.env.VITE_TMDB_API_KEY,
+              language: "ko-KR",
+            },
+          }
+        );
+        setMovie(response.data);
+        console.log(movie);
+      } catch (error) {
+        console.error("Error fetching movie detail:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMovieDetail();
+  }, [movieId]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!movie) {
+    return <div>영화 정보를 찾을 수 없습니다.</div>;
+  }
   const imageBaseUrl = "https://image.tmdb.org/t/p/w500";
   const posterUrl = `${imageBaseUrl}${movie.poster_path}`;
   const roundedRating = movie.vote_average.toFixed(1);
