@@ -43,11 +43,15 @@ export const MovieDetail = () => {
   const imageBaseUrl = "https://image.tmdb.org/t/p/w500";
   const posterUrl = `${imageBaseUrl}${movie.poster_path}`;
   const roundedRating = movie.vote_average.toFixed(1);
+  const backDropImage = `${imageBaseUrl}${movie.backdrop_path}`;
   const genre = movie.genres;
   const genreNames = genre.map((genre) => genre.name).join(", ");
 
   return (
-    <div className="flex p-[20px] gap-[60px] w-[65vw] items-center">
+    <div
+      style={{ background: backDropImage }}
+      className="flex p-[20px] gap-[60px] w-[65vw] items-center  mt-[200px]"
+    >
       <img className="h-[400px]" src={posterUrl} alt={movie.id} />
       <div>
         <div className="flex justify-between text-[30px] font-[900] mb-[20px]">

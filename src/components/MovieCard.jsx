@@ -14,10 +14,10 @@ const MovieCard = ({ movies }) => {
   return (
     <section
       onClick={() => handler(movies.id)}
-      className=" w-[200px] p-[10px] cursor-pointer "
+      className=" w-[300px] p-[10px] cursor-pointer "
     >
       <img
-        className="h-[280px] rounded-[5px]"
+        className="h-[400px] rounded-[5px]"
         src={posterUrl}
         alt={`${movies.title}Poster`}
       />

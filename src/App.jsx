@@ -7,6 +7,7 @@ import axios from "axios";
 import { NavBar } from "./components/NavBar";
 import { SignUp } from "./page/SignUp";
 import { Login } from "./page/Login";
+import Search from "./page/Serch";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -64,20 +65,21 @@ function App() {
 
   return (
     <div>
-      <Link to="/">
-        <h1 className="text-[60px] bg-black text-[white] pl-[50px] cursor-pointer">
+      <Link to="/" className="header">
+        <div className="text-[60px] bg-black text-[white] pl-[50px] cursor-pointer  ">
           Movie List
-        </h1>
+        </div>
       </Link>
       <NavBar />
-      <main className="flex flex-wrap gap-[20px] justify-center">
+      <main className="flex justify-center items-center flex-col ">
         <Routes>
           <Route path="/" element={<Main movies={movies} />} />
           <Route path="/detail/:movieId" element={<Detail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/search/:searchValue" element={<Search />} />
         </Routes>
-        {loading && <div>데이터를 불러오는 중...</div>}
+        {loading && <div className="flex-none">데이터를 불러오는 중...</div>}
       </main>
     </div>
   );

@@ -1,7 +1,7 @@
 export const Login = () => {
   return (
     <>
-      <div className=" w-[500px] border mt-[60px] rounded-[5px]">
+      <div className=" w-[500px] border mt-[200px] rounded-[5px]">
         <h1 className=" ml-[50px] mt-10 text-[30px] font-[900]">Login</h1>
         <form className="flex flex-col justify-center items-center gap-[30px]  h-[45vh] ">
           <input
