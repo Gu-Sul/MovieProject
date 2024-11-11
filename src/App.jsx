@@ -8,12 +8,14 @@ import { NavBar } from "./components/NavBar";
 import { SignUp } from "./page/SignUp";
 import { Login } from "./page/Login";
 import Search from "./page/Serch";
+import MovieCard from "./components/MovieCard";
 
 function App() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -61,13 +63,12 @@ function App() {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [loading, hasMore]);
+  }, [loading, hasMore, MovieCard]);
 
   return (
     <div>
-      <div className="header">
-        <NavBar />
-      </div>
+      <NavBar />
+
       <Routes>
         <Route path="/" element={<Main movies={movies} />} />
         <Route path="/detail/:movieId" element={<Detail />} />

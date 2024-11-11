@@ -7,14 +7,6 @@
     }
   }
 }
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000; /* 다른 요소보다 위에 오도록 설정 */
-  background-color: black;
-  color: white;
-}
 
 @media (max-width: 1260px) {
   .movieSection {
@@ -39,4 +31,14 @@
     gap: 0px;
     padding: 0 20px;
   }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
