@@ -14,7 +14,7 @@ const MovieCard = ({ movies }) => {
   return (
     <section
       onClick={() => handler(movies.id)}
-      className=" w-[300px] p-[10px] cursor-pointer "
+      className=" w-[300px] p-[10px] cursor-pointer movieSection"
     >
       <img
         className="h-[400px] rounded-[5px]"

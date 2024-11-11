@@ -15,3 +15,28 @@
   background-color: black;
   color: white;
 }
+
+@media (max-width: 1260px) {
+  .movieSection {
+    width: 200px;
+    img {
+      height: 300px;
+    }
+  }
+  .cardHover {
+    gap: 0px;
+    padding: 0 50px;
+  }
+}
+@media (max-width: 918px) {
+  .movieSection {
+    width: 150px;
+    img {
+      height: 200px;
+    }
+  }
+  .cardHover {
+    gap: 0px;
+    padding: 0 20px;
+  }
+}
