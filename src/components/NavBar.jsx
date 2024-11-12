@@ -11,7 +11,9 @@ export const NavBar = () => {
   const debouncedValue = useDebounce(inputValue, 500);
   const navigate = useNavigate();
   const location = useLocation();
-  const [image, setImage] = useState("/public/7915522.png");
+  const [image, setImage] = useState(
+    "https://cdn-icons-png.flaticon.com/512/7915/7915522.png"
+  );
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   useEffect(() => {
