@@ -31,7 +31,6 @@ export const Login = () => {
     const result = await dispatch(loginWithKakao(data.email, data.password));
 
     if (result && result.success) {
-      alert("카카오 페이지로 에서 로그인을 완료해주세요.");
     } else {
       setError(result.message || "카카오 로그인 오류");
       alert("카카오 로그인 오류");
