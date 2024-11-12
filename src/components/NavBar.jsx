@@ -55,7 +55,7 @@ export const NavBar = () => {
   };
 
   return (
-    <nav className="flex  bg-black text-[white] p-[10px] px-[30px] fixed top-[0]  w-[100%] z-[1000] ">
+    <nav className="flex  bg-black text-[white] p-[10px] px-[30px] fixed top-[0]  w-[100%] z-[1000] min-w-[900px] ">
       <Link to="/">
         <div className=" pl-[120px] font-[900] text-[50px]">Movie List</div>
       </Link>
